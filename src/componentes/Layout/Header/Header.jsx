@@ -5,11 +5,10 @@ function Header() {
        <header className="site-header">
              <section className="hero">
                <div className="hero__copy">
-                 <p className="hero__eyebrow">Dresh Tech Store</p>
-                 <h1>Los mejores Componentes, perifericos y equipos para tu setup</h1>
+                 <h1 className="hero_text-top">Los mejores componentes, perifericos y equipos para tu setup</h1>
                  <p className="hero__text">
-                   Un home de e-commerce pensado para mostrar hardware, perifericos y
-                   ofertas con una estructura clara, reutilizable y alineada con la cursada.
+                  Una tienda que pienjsa en vos para mostrarte los mejores hardware, perifericos y las
+                   ofertas que necesitas para mejorar tu vida.
                  </p>
                  <div className="hero__actions">
                    <a href="#productos" className="hero__button hero__button--primary">

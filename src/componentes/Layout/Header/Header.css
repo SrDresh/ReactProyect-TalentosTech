@@ -20,19 +20,10 @@
   gap: 1rem;
 }
 
-.hero__eyebrow {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #ffb26b;
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
 .hero__copy h1 {
   margin: 0;
   font-size: clamp(2.3rem, 5vw, 4.5rem);
-  line-height: 1.02;
+  line-height: 1.05;
   max-width: 12ch;
 }
 
