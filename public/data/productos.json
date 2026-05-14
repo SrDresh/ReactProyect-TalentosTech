@@ -48,7 +48,7 @@
     {
       "id": 6,
       "nombre": "Monitor 27 QHD 165Hz",
-      "imagen": "/data/imagenes/5700x3d.png",
+      "imagen": "/data/imagenes/Monitor-samsung.png",
       "categoria": "Monitores",
       "precio": 419900,
       "stock": 3,
@@ -66,7 +66,7 @@
     {
       "id": 8,
       "nombre": "Fuente 750W 80 Plus Gold",
-      "imagen": "/data/imagenes/5700x3d.png",
+      "imagen": "/data/imagenes/fuente750gold.png",
       "categoria": "Fuentes",
       "precio": 134500,
       "stock": 0,
@@ -75,7 +75,7 @@
     {
       "id": 9,
       "nombre": "Monitor 25 IPS 200HZ",
-      "imagen": "/data/imagenes/5700x3d.png",
+      "imagen": "/data/imagenes/gigabyte200hz.png",
       "categoria": "Monitores",
       "precio": 235000,
       "stock": 5,
