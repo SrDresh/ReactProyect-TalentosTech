@@ -1,6 +1,7 @@
+import { Links } from 'react-router-dom'
 import './Nav.css'
 
-const enlaces = ['Inicio', 'Categorias','Armá tu PC', 'Contacto']
+const enlaces = ['Inicio', 'Categorias','Solicitud de Producto', 'Contacto']
 
 function Nav() {
   return (
@@ -17,7 +18,7 @@ function Nav() {
           ))}
         </div>
 
-        <button className="site-nav__cart" type="button">
+        <button className="nav__cart" type="button">
           Carrito (0)
         </button>
       </div>

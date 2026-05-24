@@ -8,8 +8,8 @@ function Item({ nombre, precio, stock, categoria, marca, imagen }) {
     }
 
     return (
-        <article id='productos' className="item-card"> {imagen && (
-        <img src={imagen} alt={nombre} width="150" height="150" /> 
+        <article className="item-card"> {imagen && (
+        <img className="item-card_image" src={imagen} alt={nombre} width="150" height="150" /> 
         )}
             <div className="item-card_body">
                 <h3>{nombre}</h3>

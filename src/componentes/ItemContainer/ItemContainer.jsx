@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
+import './ItemContainer.css'
 
 function ItemListContainer({ mensaje }) {
     const [productos, setProductos] = useState([])
@@ -33,8 +34,8 @@ function ItemListContainer({ mensaje }) {
     }
 
     return (
-        <div>
-            <h1>{mensaje}</h1>
+        <div id='productos'className='catalogo'>
+            <h1 className='catalogo-titulo'>{mensaje}</h1>
             <ItemList productos={productos} />
         </div>
     )};

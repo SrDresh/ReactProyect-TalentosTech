@@ -1,7 +1,7 @@
 import Item from "../Item/Item"
 import './ItemList.css'
 
-function  ItemList({ productos}) {
+function  ItemList({productos}) {
     return(
         <div className="item-list">
             {productos.map(prod => (

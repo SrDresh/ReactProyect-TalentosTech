@@ -7,7 +7,7 @@ function Header() {
                <div className="hero__copy">
                  <h1 className="hero_text-top">Los mejores componentes, perifericos y equipos para tu setup</h1>
                  <p className="hero__text">
-                  Una tienda que pienjsa en vos para mostrarte los mejores hardware, perifericos y las
+                  Una tienda que piensa en vos para mostrarte los mejores hardware, perifericos y las
                    ofertas que necesitas para mejorar tu vida.
                  </p>
                  <div className="hero__actions">
