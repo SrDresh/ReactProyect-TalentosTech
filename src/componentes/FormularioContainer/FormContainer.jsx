@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import FormContainer from '../FormularioContainer/Form'
-import './SolicitudProducto.css'
+import FormularioProducto from '../FormularioContainer/Form'
 
-function SolicitudProducto() {
+function FormContainer() {
   const [datosForm, setDatosForm] = useState({
     nombre: '',
     precio: '',

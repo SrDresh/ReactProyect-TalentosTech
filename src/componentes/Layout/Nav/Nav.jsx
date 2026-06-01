@@ -1,4 +1,4 @@
-import { Links } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 const enlaces = ['Inicio', 'Categorias','Solicitud de Producto', 'Contacto']
@@ -7,15 +7,15 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__content">
-        <a className="nav_position" href="#top">
+        <Link className="nav_position" to="/">
           Dresh Tech
-        </a>
+        </Link>
+
         <div className="nav__links">
-          {enlaces.map((enlace) => (
-            <a key={enlace} href={`#${enlace.toLowerCase().replaceAll(' ', '-')}`}>
-              {enlace}
-            </a>
-          ))}
+          <Link to="/">Inicio</Link>
+          <a href="#categorias">Categorias</a>
+          <Link to="/solicitud-producto">Solicitud de Producto</Link>
+          <a href="#contacto">Contacto</a>
         </div>
 
         <button className="nav__cart" type="button">
