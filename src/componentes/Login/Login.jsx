@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import "./Auth.css";
 
 function Login() {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { login } = useAuth();
+    
     const navigate = useNavigate();
     const location = useLocation();
     const redirectTo = location.state?.from?.pathname || "/perfil";
