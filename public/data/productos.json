@@ -5,7 +5,7 @@
       "nombre": "Ryzen 7 5700X3D",
       "imagen": "/data/imagenes/5700x3d.png",
       "categoria": "Procesadores",
-      "precio": 329999,
+      "precio": 329.999,
       "stock": 8,
       "marca": "AMD"
     },
@@ -14,7 +14,7 @@
       "nombre": "GeForce RTX 4060 Dual",
       "imagen": "/data/imagenes/images.png",
       "categoria": "Placas de video",
-      "precio": 589999,
+      "precio": 589.999,
       "stock": 5,
       "marca": "ASUS"
     },
@@ -23,7 +23,7 @@
       "nombre": "Motherboard B550M DS3H",
       "imagen": "/data/imagenes/B550M D3sh.jpg",
       "categoria": "Motherboards",
-      "precio": 154000,
+      "precio": 154.999,
       "stock": 11,
       "marca": "Gigabyte"
     },
@@ -32,13 +32,13 @@
       "nombre": "Memoria DDR4 16GB 3200MHz",
       "imagen": "/data/imagenes/ram.png",
       "categoria": "Memorias RAM",
-      "precio": 46999,
+      "precio": 46.999,
       "stock": 22,
       "marca": "Kingston"
     },
     {
       "id": 5,
-      "nombre": "SSD NVMe 1TB SN770",
+      "nombre": "Disco SSD M.2 1TB SN770",
       "imagen": "/data/imagenes/5700x3d.png",
       "categoria": "Almacenamiento",
       "precio": 102500,
@@ -92,20 +92,20 @@
     },
     {
       "id": 11,
-      "nombre": "Monitor 25 IPS 200HZ",
+      "nombre": "GeForce RTX 5090",
       "imagen": "/data/imagenes/5700x3d.png",
-      "categoria": "Monitores",
-      "precio": 235000,
+      "categoria": "Placas de video",
+      "precio": 6435000,
       "stock": 5,
-      "marca":"Gigabyte"
+      "marca":"ASUS"
     },
     {
       "id": 12,
-      "nombre": "Monitor 25 IPS 200HZ",
-      "categoria": "Monitores",
-      "precio": 235000,
-      "stock": 5,
-      "marca":"Gigabyte"
+      "nombre": " Disco SSD M.2 1TB T705",
+      "categoria": "Almacenamiento",
+      "precio": 435000,
+      "stock": 30,
+      "marca":"Crucial"
     },
     {
       "id": 13,

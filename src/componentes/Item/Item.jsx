@@ -1,10 +1,13 @@
-import './Item.css'
+import { useCart } from '../Carrito/useCart';
+import './Item.css';
 
-function Item({ nombre, precio, stock, categoria, marca, imagen }) {
-    const sinStock = stock === 0
+function Item({ id, nombre, precio, stock, categoria, marca, imagen }) {
+    const { addToCart, getCantidadActual } = useCart();
+    const cantidadActual = getCantidadActual(id);
+    const sinStock = stock === 0 || cantidadActual >= stock;
 
     const CompraClick = () => {
-        alert(`Agregaste ${nombre} al carrito!`);
+        addToCart({ id, nombre, precio, stock, categoria, marca, imagen }, 1);
     }
 
     return (
