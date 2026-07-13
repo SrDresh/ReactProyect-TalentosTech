@@ -5,7 +5,7 @@ function Header() {
        <header className="site-header">
              <section className="hero">
                <div className="hero__copy">
-                 <h1 className="hero_text-top">Los mejores componentes, perifericos y equipos para tu setup</h1>
+                 <h1 className="hero__title">Los mejores componentes, perifericos y equipos para tu setup</h1>
                  <p className="hero__text">
                   Una tienda que piensa en vos para mostrarte los mejores hardware, perifericos y las
                    ofertas que necesitas para mejorar tu vida.

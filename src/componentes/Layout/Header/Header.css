@@ -3,6 +3,7 @@
     radial-gradient(circle at top left, rgba(255, 184, 107, 0.22), transparent 28%),
     linear-gradient(135deg, #7a1404 0%, #bd1e02 45%, #e65100 100%);
   color: #ffffff;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 .hero {
@@ -10,21 +11,22 @@
   margin: 0 auto;
   padding: 2rem 0 3.5rem;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
 }
 
 .hero__copy {
   display: grid;
   gap: 1rem;
+  max-width: 920px;
 }
 
-.hero__copy h1 {
+.hero__title {
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  line-height: 1.05;
-  max-width: 12ch;
+  max-width: 22ch;
+  font-size: clamp(2rem, 3.8vw, 3.35rem);
+  line-height: 1.0;
+  font-weight: 800;
 }
 
 .hero__text {
@@ -68,7 +70,7 @@
     padding-bottom: 2.5rem;
   }
 
-  .hero__copy h1 {
+  .hero__title {
     max-width: 100%;
   }
 }
