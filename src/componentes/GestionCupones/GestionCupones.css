@@ -1,0 +1,171 @@
+.gestion-cupones {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+.gestion-cupones__panel {
+  background: linear-gradient(135deg, #fff7ed 0%, #fff0e3 100%);
+  border: 1px solid #f6d9be;
+  border-radius: 24px;
+  padding: 1.4rem;
+  box-shadow: 0 16px 40px rgba(105, 57, 24, 0.12);
+}
+
+.gestion-cupones__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.gestion-cupones__eyebrow {
+  margin: 0;
+  color: #b16a35;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+}
+
+.gestion-cupones__title {
+  margin: 0.25rem 0 0;
+  color: #6d2f12;
+  font-size: 1.5rem;
+}
+
+.gestion-cupones__cancel-btn,
+.gestion-cupones__submit-btn,
+.gestion-cupones__edit-btn,
+.gestion-cupones__delete-btn {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-cupones__cancel-btn:hover,
+.gestion-cupones__submit-btn:hover,
+.gestion-cupones__edit-btn:hover,
+.gestion-cupones__delete-btn:hover {
+  transform: translateY(-1px);
+}
+
+.gestion-cupones__cancel-btn {
+  padding: 0.7rem 1rem;
+  background: #f7e5d8;
+  color: #7a3a16;
+}
+
+.gestion-cupones__form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.gestion-cupones__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.gestion-cupones__input {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid #f3d2b8;
+  background: #fffaf5;
+  font-size: 0.95rem;
+  color: #5a2d18;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.gestion-cupones__actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.gestion-cupones__submit-btn {
+  padding: 0.85rem 1.2rem;
+  background: linear-gradient(135deg, #8c3b14 0%, #c96b2d 100%);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(140, 59, 20, 0.22);
+}
+
+.gestion-cupones__list-panel {
+  margin-top: 1.2rem;
+  background: #fffdf9;
+  border: 1px solid #f5e1ca;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.gestion-cupones__list-title {
+  margin-top: 0;
+  color: #6d2f12;
+}
+
+.gestion-cupones__list {
+  padding-left: 0;
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+}
+
+.gestion-cupones__empty {
+  list-style: none;
+  color: #8a5b3e;
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: #fff4e8;
+}
+
+.gestion-cupones__item {
+  list-style: none;
+  border: 1px solid #f1d7be;
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #fffaf5 0%, #fff3e8 100%);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gestion-cupones__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.gestion-cupones__item-name {
+  color: #6d2f12;
+  font-size: 1rem;
+}
+
+.gestion-cupones__item-meta {
+  color: #7b4b30;
+}
+
+.gestion-cupones__item-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.gestion-cupones__edit-btn {
+  padding: 0.65rem 0.9rem;
+  background: #f5e0d0;
+  color: #8a3f18;
+}
+
+.gestion-cupones__delete-btn {
+  padding: 0.65rem 0.9rem;
+  background: #8c3b14;
+  color: #fff;
+}

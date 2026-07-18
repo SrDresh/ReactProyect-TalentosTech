@@ -1,7 +1,22 @@
 .item-list {
-    width: min(1200px, calc(100% - 2rem));
-    margin: 2rem auto;
-    display: grid;
+  width: 100%;
+  max-width: none;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.item-list > * {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .item-list {
+    width: 100%;
+    gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+  }
 }

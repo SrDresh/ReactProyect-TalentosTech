@@ -1,51 +1,50 @@
-import { Routes, Route } from "react-router-dom";
-import { Layout } from "./componentes/Layout/Layout";
-import ItemListContainer from "./componentes/ItemContainer/ItemContainer";
-import FormContainer from "./componentes/FormularioContainer/FormContainer"
-import Login from "./componentes/Login/Login";
-import Register from "./componentes/Login/Register";
-import Profile from "./componentes/Login/Profile";
-import ProtectedRoute from "./componentes/Login/ProtectedRoute";
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './componentes/Layout/Layout';
+import ItemListContainer from './componentes/ItemContainer/ItemContainer';
+import FormContainer from './componentes/FormularioContainer/FormContainer';
+import GestionCupones from './componentes/GestionCupones/GestionCupones';
+import './App.css';
+import ProductosBD from './componentes/ProductosBD/ProductosBD';
+import ProtectedRoute from './componentes/Usuarios/ProtectedRoute';
+import Login from './componentes/Usuarios/Login';
+import Registro from './componentes/Usuarios/Registro';
+import Perfil from './componentes/Usuarios/Perfil';
 
 function App() {
   return (
     <Layout>
       <Routes>
+        <Route path="/" element={<ItemListContainer mensaje="Productos Destacados" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
         <Route
-          path="/"
-          element={<ItemListContainer mensaje="Productos disponibles" />} />
-
-        <Route
-          path="/solicitud-producto"
+          path="/perfil"
           element={
             <ProtectedRoute>
-              <FormContainer />
+              <Perfil />
             </ProtectedRoute>
           }
         />
         <Route
           path="/panel-gestion"
           element={
-            <ProtectedRoute rolesPermitidos={"admin"}>
+            <ProtectedRoute roles={['admin']}>
               <FormContainer />
             </ProtectedRoute>
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/registro" element={<Register />} />
         <Route
-          path="/perfil"
+          path="/admin/cupones"
           element={
-            <ProtectedRoute>
-              <Profile />
+            <ProtectedRoute roles={['admin']}>
+              <GestionCupones />
             </ProtectedRoute>
           }
         />
+        <Route path="/ProductosBD" element={<ProductosBD />} />
       </Routes>
     </Layout>
-  )
+  );
 }
 
-export default App
-/*/<ItemListContainer className='item-list_container' mensaje="Productos disponibles" />*/
+export default App;

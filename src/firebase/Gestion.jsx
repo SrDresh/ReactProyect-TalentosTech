@@ -14,8 +14,7 @@ const handleEditClick = (producto) => {
 };
 const manejarEnvio = async (e) => {
     e.preventDefault();
-    let urlImagen = datosForm.imagen; // Mantenemos la imagen actual por
-    defecto
+    let urlImagen = datosForm.imagen;
     if (imagenFile) {
         const formData = new FormData();
         formData.append('image', imagenFile);
@@ -28,7 +27,7 @@ const manejarEnvio = async (e) => {
                 });
             const data = await response.json();
             if (data.success) {
-                urlImagen = data.data.url; // Obtenemos la nueva URL
+                urlImagen = data.data.url;
             } else {
                 throw new Error('La subida de la imagen falló.');
             }

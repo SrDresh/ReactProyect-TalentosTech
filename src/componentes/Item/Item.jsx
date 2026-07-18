@@ -1,4 +1,4 @@
-import { useCart } from '../Carrito/useCart';
+import { useCart } from '../../context/useCart';
 import './Item.css';
 
 function Item({ id, nombre, precio, stock, categoria, marca, imagen }) {

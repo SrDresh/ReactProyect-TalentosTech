@@ -1,99 +1,133 @@
-import { useState } from "react";
-import FormularioProducto from "./FormularioProducto";
+import { useEffect, useState } from 'react';
+import FormularioProducto from './FormularioProducto';
+import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { db } from '../../firebase/firebaseConfig';
 
+const estadoInicialForm = {
+    nombre: '',
+    categoria: '',
+    precio: '',
+    stock: '',
+    descripcion: '',
+    imagen: '',
+};
 
 function FormularioContainer() {
-    const [datosForm, setDatosForm] = useState({
-        nombre: '',
-        precio: '',
-        stock: '',
-    });
-
-    // 1. Nuevo estado para el archivo de imagen
+    const [datosForm, setDatosForm] = useState(estadoInicialForm);
     const [imagenFile, setImagenFile] = useState(null);
-
-    //Ejercicio Clase 6
-    //Paso 1
     const [loading, setLoading] = useState(false);
+    const [productos, setProductos] = useState([]);
+    const [productoAEditar, setProductoAEditar] = useState(null);
+
+    const cargarProductos = async () => {
+        const productosRef = collection(db, 'productos');
+        const respuesta = await getDocs(productosRef);
+        setProductos(respuesta.docs.map((item) => ({ ...item.data(), id: item.id })));
+    };
+
+    useEffect(() => {
+        cargarProductos();
+    }, []);
+
+    useEffect(() => {
+        if (productoAEditar) {
+            setDatosForm({ ...estadoInicialForm, ...productoAEditar });
+        } else {
+            setDatosForm(estadoInicialForm);
+        }
+    }, [productoAEditar]);
 
     const manejarCambio = (evento) => {
         const { name, value } = evento.target;
-        setDatosForm({
-            ...datosForm,
-            [name]: value
-        });
+        setDatosForm((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
     };
 
-    // 2. Nueva función para manejar el cambio del input de tipo "file"
     const manejarCambioImagen = (evento) => {
         setImagenFile(evento.target.files[0]);
     };
 
-    const manejarEnvio = async (evento) => {
-        evento.preventDefault();
-        // Validamos que el usuario haya seleccionado una imagen
+    const subirImagen = async () => {
         if (!imagenFile) {
-            alert("Por favor, selecciona una imagen para el producto.");
-            return;
+            return datosForm.imagen || '';
         }
 
-        //Ejercicio Clase 6
-        //Paso 2
-        setLoading(true);
-        console.log("Loading...");
-
-        // --- Lógica para subir la imagen a Imgbb ---
-        const apiKey = '1ac81cf4c3348932a5148cdffe3dfaee'; // 🚨 ¡Reemplazá esto con tu clave!
+        const apiKey = '1ac81cf4c3348932a5148cdffe3dfaee';
         const formData = new FormData();
         formData.append('image', imagenFile);
 
-        try {
-            console.log("Subiendo imagen a Imgbb...");
+        const respuestaImgbb = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+            method: 'POST',
+            body: formData,
+        });
 
-            const respuestaImgbb = await
-                fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
-                    method: 'POST',
-                    body: formData,
-                });
-
-            const datosImgbb = await respuestaImgbb.json();
-
-            if (datosImgbb.success) {
-                console.log("Imagen subida con éxito. URL:", datosImgbb.data.url);
-
-                // Unimos la URL de la imagen con el resto de los datos del formulario
-                const productoCompleto = {
-                    ...datosForm,
-                    // Agregamos la URL obtenida
-                    imagen: datosImgbb.data.url
-                };
-
-                // Por el momento hacemos un console.log
-                console.log('Enviando producto a Firebase:',
-                    productoCompleto);
-
-                // Obtenemos la instancia de la base de datos
-                const db = getFirestore();
-                // Apuntamos a la colección "productos" (si no existe, se crea)
-                const productosCollection = collection(db, "productos");
-                // Agregamos el nuevo documento a la colección
-                await addDoc(productosCollection, productoCompleto);
-
-
-            } else {
-                throw new Error('La subida de la imagen a Imgbb falló.');
-            }
-        } catch (error) {
-            console.error("Error en el proceso de envío:", error);
-            alert("Hubo un error al subir la imagen. Por favor, intentá de nuevo.");
+        const datosImgbb = await respuestaImgbb.json();
+        if (!datosImgbb.success) {
+            throw new Error('La subida de la imagen a Imgbb falló.');
         }
 
-        //Ejercicio Clase 6
-        //Paso 3
-        finally {
-            //Desactivar loading
+        return datosImgbb.data.url;
+    };
+
+    const manejarEnvio = async (evento) => {
+        evento.preventDefault();
+        setLoading(true);
+
+        try {
+            const urlImagen = await subirImagen();
+            const productoCompleto = {
+                ...datosForm,
+                nombre: datosForm.nombre.trim(),
+                categoria: datosForm.categoria.trim(),
+                precio: Number(datosForm.precio) || 0,
+                stock: Number(datosForm.stock) || 0,
+                descripcion: datosForm.descripcion.trim(),
+                imagen: urlImagen,
+            };
+
+            if (productoAEditar) {
+                const productoRef = doc(db, 'productos', productoAEditar.id);
+                await updateDoc(productoRef, productoCompleto);
+                alert('Producto actualizado correctamente.');
+            } else {
+                await addDoc(collection(db, 'productos'), productoCompleto);
+                alert('Producto agregado correctamente.');
+            }
+
+            setDatosForm(estadoInicialForm);
+            setProductoAEditar(null);
+            setImagenFile(null);
+            evento.currentTarget.reset();
+            await cargarProductos();
+        } catch (error) {
+            console.error('Error en el proceso de envío:', error);
+            alert('Hubo un error al guardar el producto. Por favor, inténtalo de nuevo.');
+        } finally {
             setLoading(false);
         }
+    };
+
+    const handleDelete = async (id) => {
+        const confirmacion = window.confirm('¿Desea eliminar este producto?');
+        if (!confirmacion) {
+            return;
+        }
+
+        await deleteDoc(doc(db, 'productos', id));
+        await cargarProductos();
+    };
+
+    const handleEdit = (producto) => {
+        setProductoAEditar(producto);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const cancelarEdicion = () => {
+        setProductoAEditar(null);
+        setDatosForm(estadoInicialForm);
+        setImagenFile(null);
     };
 
     return (
@@ -102,9 +136,12 @@ function FormularioContainer() {
             manejarCambio={manejarCambio}
             manejarEnvio={manejarEnvio}
             manejarCambioImagen={manejarCambioImagen}
-            //Ejercicio Clase 6
-            //Paso 4
             loading={loading}
+            productos={productos}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+            productoAEditar={productoAEditar}
+            cancelarEdicion={cancelarEdicion}
         />
     );
 }

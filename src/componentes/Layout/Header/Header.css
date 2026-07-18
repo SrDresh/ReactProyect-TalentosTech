@@ -1,4 +1,8 @@
 .site-header {
+  width: 100%;
+  min-height: 50svh;
+  display: flex;
+  align-items: center;
   background:
     radial-gradient(circle at top left, rgba(255, 184, 107, 0.22), transparent 28%),
     linear-gradient(135deg, #7a1404 0%, #bd1e02 45%, #e65100 100%);
@@ -7,9 +11,11 @@
 }
 
 .hero {
-  width: min(1420px, calc(100% - 2rem));
-  margin: 0 auto;
-  padding: 2rem 0 3.5rem;
+  width: 100%;
+  max-width: none;
+  min-height: 100%;
+  margin: 0;
+  padding: 1.25rem 2rem 2rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;

@@ -7,7 +7,8 @@
       "categoria": "Procesadores",
       "precio": 329.999,
       "stock": 8,
-      "marca": "AMD"
+      "marca": "AMD",
+      "destacados":"true"
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@
       "categoria": "Motherboards",
       "precio": 154.999,
       "stock": 11,
-      "marca": "Gigabyte"
+      "marca": "Gigabyte",
+      "destacados":"false"
     },
     {
       "id": 4,
@@ -34,16 +36,18 @@
       "categoria": "Memorias RAM",
       "precio": 46.999,
       "stock": 22,
-      "marca": "Kingston"
+      "marca": "Kingston",
+      "destacados":"true"
     },
     {
       "id": 5,
       "nombre": "Disco SSD M.2 1TB SN770",
-      "imagen": "/data/imagenes/5700x3d.png",
+      "imagen": "/data/imagenes/sn770.jpg",
       "categoria": "Almacenamiento",
       "precio": 102500,
       "stock": 14,
-      "marca": "Western Digital"
+      "marca": "Western Digital",
+      "destacados":"false"
     },
     {
       "id": 6,
@@ -51,8 +55,9 @@
       "imagen": "/data/imagenes/Monitor-samsung.png",
       "categoria": "Monitores",
       "precio": 419900,
-      "stock": 3,
-      "marca": "Samsung"
+      "stock": 10,
+      "marca": "Samsung",
+      "destacados":"false"
     },
     {
       "id": 7,
@@ -61,7 +66,8 @@
       "categoria": "Perifericos",
       "precio": 68999,
       "stock": 17,
-      "marca": "Redragon"
+      "marca": "Redragon",
+      "destacados":"true"
     },
     {
       "id": 8,
@@ -70,7 +76,8 @@
       "categoria": "Fuentes",
       "precio": 134500,
       "stock": 0,
-      "marca": "Corsair"
+      "marca": "Corsair",
+      "destacados":"false"
     },
     {
       "id": 9,
@@ -78,8 +85,9 @@
       "imagen": "/data/imagenes/gigabyte200hz.png",
       "categoria": "Monitores",
       "precio": 235000,
-      "stock": 5,
-      "marca":"Gigabyte"
+      "stock": 30,
+      "marca":"Gigabyte",
+      "destacados":"true"
     },
     {
       "id": 10,
@@ -88,7 +96,8 @@
       "categoria": "Procesadores",
       "precio": 235000,
       "stock": 20,
-      "marca":"AMD"
+      "marca":"AMD",
+      "destacados":"true"
     },
     {
       "id": 11,
@@ -97,7 +106,8 @@
       "categoria": "Placas de video",
       "precio": 6435000,
       "stock": 5,
-      "marca":"ASUS"
+      "marca":"ASUS",
+      "destacados":"true"
     },
     {
       "id": 12,
@@ -105,7 +115,8 @@
       "categoria": "Almacenamiento",
       "precio": 435000,
       "stock": 30,
-      "marca":"Crucial"
+      "marca":"Crucial",
+      "destacados":"true"
     },
     {
       "id": 13,
@@ -113,7 +124,8 @@
       "categoria": "Monitores",
       "precio": 235000,
       "stock": 5,
-      "marca":"Gigabyte"
+      "marca":"Gigabyte",
+      "destacados":"true"
     },
     {
       "id": 14,
@@ -121,7 +133,8 @@
       "categoria": "Monitores",
       "precio": 235000,
       "stock": 5,
-      "marca":"Gigabyte"
+      "marca":"Gigabyte",
+      "destacados":"true"
     },
     {
       "id": 15,
@@ -129,7 +142,8 @@
       "categoria": "Monitores",
       "precio": 235000,
       "stock": 5,
-      "marca":"Gigabyte"
+      "marca":"Gigabyte",
+      "destacados":"true"
     },
     {
       "id": 16,
@@ -137,7 +151,8 @@
       "categoria": "Monitores",
       "precio": 235000,
       "stock": 5,
-      "marca":"Gigabyte"
+      "marca":"Gigabyte",
+      "destacados":"true"
     }
   ]
 }

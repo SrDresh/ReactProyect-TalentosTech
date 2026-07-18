@@ -1,4 +1,5 @@
 .site-footer {
+  width: 100%;
   background:
     linear-gradient(180deg, #4f0e03 0%, #7a1404 35%, #140706 100%);
   color: #fff0ea;
@@ -6,12 +7,13 @@
 }
 
 .site-footer__content {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
-  padding-bottom: 2rem;
+  padding: 0 2rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -37,11 +39,13 @@
 }
 
 .site-footer__team {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 2rem auto 0;
+  width: 100%;
+  max-width: none;
+  margin: 2rem 0 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+  padding: 0 2rem;
 }
 
 .team-card {
